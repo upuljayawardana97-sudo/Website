@@ -1,0 +1,1169 @@
+/* ==========================================================================
+   ADITHYA DANCING ACADEMY - MODERN LUXURY THEME
+   Styles: Deep Obsidian Dark, Warm Gold Accents, Glassmorphism, Animations
+   ========================================================================== */
+
+/* Root Variables */
+:root {
+    --bg-dark: #0a0a0c;
+    --bg-darker: #060608;
+    --bg-deep: #111116;
+    --bg-card: rgba(22, 22, 30, 0.75);
+    --bg-card-hover: rgba(30, 30, 42, 0.9);
+
+    /* Gold Metallic Gradients */
+    --gold-primary: #d4af37;
+    --gold-light: #f3e08c;
+    --gold-dark: #997b19;
+    --gold-gradient: linear-gradient(135deg, #fceaa7 0%, #d4af37 50%, #997b19 100%);
+    --gold-glow: 0 0 25px rgba(212, 175, 55, 0.35);
+    --gold-glow-lg: 0 0 45px rgba(212, 175, 55, 0.5);
+
+    /* Text Colors */
+    --text-white: #ffffff;
+    --text-muted: #b3b3c2;
+    --text-muted-dark: #808092;
+
+    /* Fonts */
+    --font-heading: 'Cinzel', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-sinhala: 'Noto Sans Sinhala', sans-serif;
+
+    /* Transitions */
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Reset & Base Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+    selection-background-color: var(--gold-primary);
+    selection-color: #000;
+}
+
+::selection {
+    background: var(--gold-primary);
+    color: #000000;
+}
+
+/* Typography Utility */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-sans);
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.sinhala-font {
+    font-family: var(--font-sinhala) !important;
+}
+
+.gold-gradient-text {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.gold-text {
+    color: var(--gold-primary) !important;
+}
+
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+.bg-gold-gradient {
+    background: var(--gold-gradient) !important;
+}
+
+.text-muted-light {
+    color: var(--text-muted) !important;
+}
+
+.bg-dark-deep {
+    background-color: var(--bg-deep) !important;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker) !important;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* Canvas Particle Layer */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* Section Header Styles */
+.sub-heading-badge {
+    display: inline-block;
+    color: var(--gold-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding: 4px 14px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 50px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+    font-size: 1.05rem;
+}
+
+.gold-divider {
+    width: 70px;
+    height: 3px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.gold-divider::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 9px;
+    background: var(--gold-light);
+    border-radius: 50%;
+}
+
+/* Glassmorphism Cards */
+.glassmorphism-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.glassmorphism-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(212, 175, 55, 0.45);
+    box-shadow: var(--gold-glow);
+    transform: translateY(-6px);
+}
+
+/* Buttons */
+.btn-gold {
+    background: var(--gold-gradient);
+    color: #000 !important;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-gold:hover {
+    color: #000 !important;
+    transform: translateY(-2px);
+    box-shadow: var(--gold-glow);
+}
+
+.btn-outline-gold {
+    background: transparent;
+    color: var(--gold-primary) !important;
+    border: 1.5px solid var(--gold-primary);
+    font-weight: 700;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.btn-outline-gold:hover {
+    background: var(--gold-primary);
+    color: #000 !important;
+    box-shadow: var(--gold-glow);
+    transform: translateY(-2px);
+}
+
+.shadow-gold {
+    box-shadow: var(--gold-glow) !important;
+}
+
+.shadow-gold-sm {
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Custom Cursor */
+.custom-cursor-dot,
+.custom-cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transition: opacity 0.2s ease;
+}
+
+.custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-light);
+}
+
+.custom-cursor-outline {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(212, 175, 55, 0.6);
+    transition: width 0.2s ease, height 0.2s ease, transform 0.15s ease-out;
+}
+
+/* ===================================================
+   NAVIGATION BAR
+   =================================================== */
+.navbar {
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    padding: 18px 0;
+    transition: var(--transition-smooth);
+    z-index: 1030;
+}
+
+.navbar.scrolled {
+    padding: 12px 0;
+    background: rgba(6, 6, 8, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.brand-logo-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 175, 55, 0.08);
+    font-size: 1.25rem;
+}
+
+.brand-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+}
+
+.brand-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--gold-primary);
+    display: block;
+    font-weight: 600;
+}
+
+.nav-link {
+    color: #e0e0e0 !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px !important;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold-gradient);
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold-light) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 60%;
+}
+
+.btn-nav {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
+
+/* ===================================================
+   1. HERO SECTION
+   =================================================== */
+.hero-section {
+    background: url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=1920&auto=format&fit=crop') center center/cover no-repeat;
+    position: relative;
+    padding-top: 100px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(10, 10, 12, 0.7) 0%, rgba(6, 6, 8, 0.95) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 6px 18px;
+    border-radius: 50px;
+    color: var(--gold-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold-primary);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px var(--gold-primary);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    text-shadow: 0 5px 25px rgba(0, 0, 0, 0.9);
+}
+
+.hero-sinhala-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-tagline {
+    font-size: 1.25rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-description {
+    max-width: 680px;
+    font-size: 1.05rem;
+}
+
+.bounce-animation {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-8px);
+    }
+
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+/* ===================================================
+   2. ABOUT US & STATS
+   =================================================== */
+.about-image-wrapper {
+    position: relative;
+    padding: 15px;
+}
+
+.gold-frame-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    border: 2px solid var(--gold-primary);
+    border-radius: 1.25rem;
+    z-index: 0;
+}
+
+.main-about-img {
+    position: relative;
+    z-index: 1;
+    transform: translate(15px, 15px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    object-fit: cover;
+    max-height: 480px;
+    width: 100%;
+}
+
+.about-floating-card {
+    position: absolute;
+    bottom: -15px;
+    right: 5px;
+    z-index: 2;
+}
+
+.floating-icon-box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold-gradient);
+}
+
+.counter-number {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+/* ===================================================
+   3. DANCE CLASSES CARDS
+   =================================================== */
+.class-card {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.class-img-wrapper {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+}
+
+.class-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.class-card:hover .class-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.class-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(6, 6, 8, 0.85);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.class-content {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ===================================================
+   4. FEATURED PERFORMANCE BANNER
+   =================================================== */
+.featured-performance-section {
+    background: url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?q=80&w=1920&auto=format&fit=crop') center center/cover fixed no-repeat;
+    position: relative;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.featured-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(6, 6, 8, 0.9) 0%, rgba(17, 17, 22, 0.85) 100%);
+}
+
+.performance-badge {
+    display: inline-block;
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.play-featured-video-btn {
+    transition: var(--transition-smooth);
+}
+
+.play-featured-video-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===================================================
+   5. PHOTO GALLERY & LIGHTBOX
+   =================================================== */
+.btn-filter {
+    background: rgba(22, 22, 30, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: #c5c5d2;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.btn-filter:hover,
+.btn-filter.active {
+    background: var(--gold-gradient);
+    color: #000;
+    border-color: transparent;
+    box-shadow: var(--gold-glow-sm);
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--bg-deep);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.gallery-thumb-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 260px;
+}
+
+.gallery-thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-thumb-wrapper img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(6, 6, 8, 0.9) 0%, rgba(6, 6, 8, 0.2) 60%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.media-upload-panel {
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.media-upload-panel .custom-input {
+    min-height: 44px;
+    font-size: 0.85rem;
+}
+
+.media-upload-status {
+    min-height: 1.5em;
+}
+
+.lightbox-modal .modal-content {
+    background: rgba(10, 10, 14, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    box-shadow: var(--gold-glow-lg);
+}
+
+.lightbox-img-container img {
+    max-height: 75vh;
+    object-fit: contain;
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: var(--transition-smooth);
+    z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+    background: var(--gold-primary);
+    color: #000;
+}
+
+.lightbox-nav-btn.prev-btn {
+    left: 15px;
+}
+
+.lightbox-nav-btn.next-btn {
+    right: 15px;
+}
+
+/* ===================================================
+   6. VIDEO GALLERY
+   =================================================== */
+.video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.video-thumb-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.video-thumb-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.video-card:hover .video-thumb-container img {
+    transform: scale(1.06);
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(212, 175, 55, 0.85);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 1.5rem;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    transition: var(--transition-smooth);
+}
+
+.video-card:hover .play-button-overlay {
+    background: var(--gold-light);
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.9);
+}
+
+.video-card:focus-visible,
+.media-upload-panel button:focus-visible,
+.media-upload-panel input:focus-visible,
+.media-upload-panel select:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* ===================================================
+   7. EVENTS SECTION
+   =================================================== */
+.event-card {
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-image-box {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-date-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--gold-gradient);
+    color: #000;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.event-details-content {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ===================================================
+   8. ACHIEVEMENTS & WHY CHOOSE US
+   =================================================== */
+.achievement-card,
+.why-card {
+    border-radius: 16px;
+    padding: 30px 24px;
+    text-align: center;
+    height: 100%;
+}
+
+.icon-box-gold {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px auto;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--gold-primary);
+    transition: var(--transition-smooth);
+}
+
+.achievement-card:hover .icon-box-gold,
+.why-card:hover .icon-box-gold {
+    background: var(--gold-gradient);
+    color: #000;
+    transform: rotateY(180deg);
+}
+
+/* ===================================================
+   9. TESTIMONIALS & REVIEWS
+   =================================================== */
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 35px 25px;
+}
+
+.student-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-primary);
+    padding: 3px;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.stars-rating {
+    color: #f5b301;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.quote-icon {
+    font-size: 2.2rem;
+    color: rgba(212, 175, 55, 0.35);
+}
+
+.carousel-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================================================
+   10. INSTAGRAM STREAM
+   =================================================== */
+.instagram-post-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.instagram-post-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.instagram-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 6, 8, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-post-card:hover img {
+    transform: scale(1.1);
+}
+
+.instagram-post-card:hover .instagram-overlay {
+    opacity: 1;
+}
+
+.social-handle-btn {
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(22, 22, 30, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.social-handle-btn:hover {
+    background: var(--gold-gradient);
+    color: #000;
+    border-color: transparent;
+}
+
+/* ===================================================
+   11. CONTACT SECTION & FORMS
+   =================================================== */
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.custom-input {
+    background: rgba(14, 14, 18, 0.85) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    color: #ffffff !important;
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+}
+
+.custom-input:focus {
+    background: rgba(18, 18, 24, 0.95) !important;
+    border-color: var(--gold-primary) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.35) !important;
+}
+
+.form-floating label {
+    color: var(--text-muted);
+}
+
+/* ===================================================
+   12. FOOTER
+   =================================================== */
+.footer-heading {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background: var(--gold-gradient);
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+    padding-left: 5px;
+}
+
+.social-circle-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(22, 22, 30, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.social-circle-btn:hover {
+    background: var(--gold-gradient);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: var(--gold-glow-sm);
+}
+
+/* ===================================================
+   13. FLOATING WHATSAPP BUTTON
+   =================================================== */
+.floating-whatsapp-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 1020;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    box-shadow: 0 5px 25px rgba(37, 211, 102, 0.45);
+    animation: pulseWhatsApp 2.2s infinite;
+}
+
+.floating-whatsapp-btn:hover {
+    color: #ffffff;
+    transform: scale(1.12);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 75px;
+    background: rgba(10, 10, 14, 0.9);
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.floating-whatsapp-btn:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+@keyframes pulseWhatsApp {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   =================================================== */
+@media (max-width: 991px) {
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+    }
+
+    .hero-sinhala-title {
+        font-size: 1.4rem;
+    }
+
+    .navbar-collapse {
+        background: rgba(8, 8, 10, 0.98);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.25);
+        margin-top: 15px;
+    }
+
+    .about-image-wrapper {
+        margin-bottom: 25px;
+    }
+
+    .main-about-img {
+        transform: translate(0, 0);
+    }
+
+    .gold-frame-backdrop {
+        display: none;
+    }
+
+    .custom-cursor-dot,
+    .custom-cursor-outline {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .floating-whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 54px;
+        height: 54px;
+        font-size: 1.7rem;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+}
